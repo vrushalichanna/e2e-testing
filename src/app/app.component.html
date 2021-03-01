@@ -1,4 +1,4 @@
-<!--The content below is only a placeholder and can be replaced.-->
+The content below is only a placeholder and can be replaced.
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
@@ -17,5 +17,31 @@
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
 </ul>
+<!-- <app-calculator></app-calculator> -->
 
 <router-outlet></router-outlet>
+
+
+
+<h2>Angular calculator</h2>
+
+
+<p>Sum</p>
+<div class="d-flex">
+  <span>
+    <input type="text" [(ngModel)]="sumFirst" class="sumFirst"  id="sumFirst" name="sumFirstValidation"
+      pattern="[-+]?[0-9]*[.,]?[0-9]+" minlength="1" /></span>
+  <span class="add">+</span>
+  <span><input type="text" [(ngModel)]="sumSecond" class="sumSecond" id="sumSecond" name="sumSecondValidation"
+      pattern="[-+]?[0-9]*[.,]?[0-9]+" minlength="1" /></span>
+  <div>
+    <button type="button" class="addButton"
+      (click)="sum()">ADD</button>
+
+  </div>
+  <div>
+    <span class="input">
+        <b class="addition">{{ sumResult | number: "1.0-2" }}</b>
+    </span>
+  </div>
+</div>

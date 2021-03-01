@@ -1,16 +1,20 @@
 import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
+import { element } from '@angular/core/src/render3';
 
 describe('workspace-project App', () => {
   let page: AppPage;
-
   beforeEach(() => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display addition of number', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to e2e-testing!');
+    page.getTitleText();
+    page.setSumFirst('3');
+    page.setSumSecond('5');
+    page.click();
+    expect(page.getSum()).toEqual('8');
   });
 
   afterEach(async () => {
@@ -19,5 +23,6 @@ describe('workspace-project App', () => {
     expect(logs).not.toContain(jasmine.objectContaining({
       level: logging.Level.SEVERE,
     } as logging.Entry));
+    browser.sleep(10000);
   });
 });

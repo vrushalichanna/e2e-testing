@@ -1,0 +1,43 @@
+<h2>Angular calculator</h2>
+
+
+<p>Sum</p>
+<div class="d-flex">
+  <span>
+    <input type="text" [(ngModel)]="sumFirst" class="sumFirst"  id="sumFirst" name="sumFirstValidation"
+      pattern="[-+]?[0-9]*[.,]?[0-9]+" minlength="1" /></span>
+  <span class="add">+</span>
+  <span><input type="text" [(ngModel)]="sumSecond" id="sumSecond" name="sumSecondValidation"
+      pattern="[-+]?[0-9]*[.,]?[0-9]+" minlength="1" /></span>
+  <div>
+    <button type="button"
+      (click)="sum()">ADD</button>
+
+  </div>
+  <div>
+    <span class="input">
+        <b>{{ sumResult | number: "1.0-2" }}</b>
+    </span>
+  </div>
+</div>
+<!-- <div [hidden]="sumFirstValidation.valid || sumFirstValidation.pristine">
+  This number is invalid.
+</div>
+<p *ngIf="sumFirstValidation?.errors?.pattern">
+  Only number characters are allowed.
+</p>
+<p *ngIf="sumFirstValidation?.errors?.minlength">
+  This entry must have at least one characters.
+</p>
+<br />
+
+<div [hidden]="sumSecondValidation.valid || sumSecondValidation.pristine">
+  This number is invalid.
+</div>
+<p *ngIf="sumSecondValidation?.errors?.pattern">
+  Only number characters are allowed.
+</p>
+<p *ngIf="sumSecondValidation?.errors?.minlength">
+  This entry must have at least one characters.
+</p>
+<br /> -->
